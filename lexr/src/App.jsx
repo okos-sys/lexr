@@ -625,14 +625,14 @@ Respond ONLY with valid JSON (no markdown):
   return (
     <div className="lexr-grid-qa">
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <div style={{ ...S.tabBar, width: "fit-content" }}>
+        <div style={{ ...S.tabBar, width: "fit-content", maxWidth: "100%" }} className="lexr-qa-tabs">
           <button style={S.tab(qaMode === "chat")} onClick={() => setQaMode("chat")}>💬 {t.tabQA}</button>
           <button style={S.tab(qaMode === "negotiate")} onClick={() => setQaMode("negotiate")}>⚡ {t.negotiateTab}</button>
         </div>
 
         {qaMode === "chat" ? (
           <>
-            <div style={{ ...S.card, minHeight: 380, maxHeight: 500, overflowY: "auto" }}>
+            <div style={{ ...S.card, minHeight: 380, maxHeight: 500, overflowY: "auto" }} className="lexr-chat-box">
               {messages.length === 0 && (
                 <div style={{ textAlign: "center", padding: "2.5rem 2rem", color: "#4a6a8a" }}>
                   <div style={{ fontSize: 26, marginBottom: 10 }}>⚖</div>
@@ -781,7 +781,11 @@ export default function App() {
         .lexr-grid-qa { display: grid; grid-template-columns: 1fr 250px; gap: 20px; }
         .lexr-summary-bar { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
         .lexr-summary-actions { display: flex; flex-direction: column; gap: 7px; border-left: 1px solid #1e2d44; padding-left: 18px; }
+        .lexr-qa-tabs button { white-space: nowrap; }
         @media (max-width: 768px) {
+          .lexr-qa-tabs { width: 100% !important; }
+          .lexr-qa-tabs button { flex: 1; text-align: center; font-size: 11px !important; padding: 5px 6px !important; }
+          .lexr-chat-box { min-height: 260px !important; max-height: 340px !important; }
           .lexr-grid-2col { grid-template-columns: 1fr !important; }
           .lexr-grid-result { grid-template-columns: 1fr !important; }
           .lexr-grid-qa { grid-template-columns: 1fr !important; }
