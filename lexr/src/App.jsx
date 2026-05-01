@@ -173,7 +173,7 @@ const RISK_COLORS = {
 };
 
 const S = {
-  app: { minHeight: "100vh", background: "linear-gradient(160deg, #0d1117 0%, #131c2e 50%, #0d1117 100%)", fontFamily: "'Crimson Pro', 'Georgia', serif", color: "#e8e0d0" },
+  app: { minHeight: "100vh", background: "linear-gradient(160deg, #0d1117 0%, #131c2e 50%, #0d1117 100%)", fontFamily: "'Crimson Pro', 'Georgia', serif", color: "#e8e0d0", overflowX: "hidden" },
   header: { borderBottom: "1px solid #1e2d44", padding: "0 1rem", display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 60, background: "rgba(13,17,23,0.92)", backdropFilter: "blur(12px)", position: "sticky", top: 0, zIndex: 100, flexWrap: "wrap", gap: 8 },
   logo: { display: "flex", alignItems: "center", gap: 10 },
   logoMark: { width: 32, height: 32, background: "linear-gradient(135deg, #2e5f9e, #1a3a6b)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #2e5f9e" },
@@ -699,7 +699,7 @@ Respond ONLY with valid JSON (no markdown):
         )}
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 14 }} className="lexr-qa-sidebar">
         <div style={S.card}>
           <div style={S.label}>{t.activeJurisdiction}</div>
           <div style={{ fontSize: 15, color: "#7eb8f7", fontFamily: "'Cormorant Garamond', serif" }}>{jLabel}</div>
@@ -786,6 +786,9 @@ export default function App() {
           .lexr-qa-tabs { width: 100% !important; }
           .lexr-qa-tabs button { flex: 1; text-align: center; font-size: 11px !important; padding: 5px 6px !important; }
           .lexr-chat-box { min-height: 260px !important; max-height: 340px !important; }
+          .lexr-qa-sidebar { display: none !important; }
+          .lexr-grid-qa { grid-template-columns: 1fr !important; }
+          body { overflow-x: hidden; }
           .lexr-grid-2col { grid-template-columns: 1fr !important; }
           .lexr-grid-result { grid-template-columns: 1fr !important; }
           .lexr-grid-qa { grid-template-columns: 1fr !important; }
