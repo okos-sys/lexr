@@ -174,14 +174,14 @@ const RISK_COLORS = {
 
 const S = {
   app: { minHeight: "100vh", background: "linear-gradient(160deg, #0d1117 0%, #131c2e 50%, #0d1117 100%)", fontFamily: "'Crimson Pro', 'Georgia', serif", color: "#e8e0d0" },
-  header: { borderBottom: "1px solid #1e2d44", padding: "0 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60, background: "rgba(13,17,23,0.92)", backdropFilter: "blur(12px)", position: "sticky", top: 0, zIndex: 100 },
+  header: { borderBottom: "1px solid #1e2d44", padding: "0 1rem", display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 60, background: "rgba(13,17,23,0.92)", backdropFilter: "blur(12px)", position: "sticky", top: 0, zIndex: 100, flexWrap: "wrap", gap: 8 },
   logo: { display: "flex", alignItems: "center", gap: 10 },
   logoMark: { width: 32, height: 32, background: "linear-gradient(135deg, #2e5f9e, #1a3a6b)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #2e5f9e" },
   logoText: { fontSize: 17, fontWeight: 500, color: "#c8d8e8", letterSpacing: "0.18em", fontFamily: "'DM Mono', monospace" },
   logoSub: { fontSize: 10, color: "#c8d8e8", letterSpacing: "0.18em", textTransform: "uppercase", fontFamily: "'DM Mono', monospace", marginTop: 1, opacity: 0.45 },
   tabBar: { display: "flex", gap: 3, background: "#161d2b", borderRadius: 8, padding: 3 },
   tab: (active) => ({ padding: "5px 14px", borderRadius: 6, border: "none", cursor: "pointer", fontSize: 12, fontWeight: 500, fontFamily: "'DM Mono', monospace", letterSpacing: "0.03em", transition: "all 0.15s", background: active ? "#1e3a5f" : "transparent", color: active ? "#7eb8f7" : "#6b8aad", outline: "none", whiteSpace: "nowrap" }),
-  main: { maxWidth: 1320, margin: "0 auto", padding: "1.5rem 2rem" },
+  main: { maxWidth: 1320, margin: "0 auto", padding: "1rem" },
   card: { background: "rgba(19,28,46,0.8)", border: "1px solid #1e2d44", borderRadius: 12, padding: "1.25rem", backdropFilter: "blur(8px)" },
   label: { fontSize: 11, fontFamily: "'DM Mono', monospace", letterSpacing: "0.1em", textTransform: "uppercase", color: "#4a6a8a", marginBottom: 8, display: "block" },
   select: { background: "#0d1117", border: "1px solid #1e2d44", borderRadius: 6, color: "#c8d8e8", padding: "7px 10px", fontSize: 13, fontFamily: "'DM Mono', monospace", outline: "none", cursor: "pointer", width: "100%" },
@@ -725,10 +725,36 @@ Respond ONLY with valid JSON (no markdown):
 }
 
 // ─── App Shell ────────────────────────────────────────────────────────────────
+function detectDefaults() {
+  // browser locale e.g. "uk" "de-AT" "fr-CH" "pl" "en-US"
+  const locale = (navigator.language || navigator.languages?.[0] || "en").toLowerCase();
+  const langCode = locale.split("-")[0];
+  const regionCode = locale.split("-")[1] || "";
+
+  // map browser locale → jurisdiction
+  const localeToJurisdiction = {
+    uk: "ua",                  // Ukrainian → Ukraine
+    de: regionCode === "at" ? "at" : regionCode === "ch" ? "ch" : "de",
+    fr: regionCode === "ch" ? "ch" : "fr",
+    pl: "pl",
+    en: regionCode === "gb" ? "uk" : regionCode === "au" ? "uk" : "us",
+  };
+  const jVal = localeToJurisdiction[langCode] || "eu";
+  const jDef = JURISDICTIONS.find(j => j.value === jVal) || JURISDICTIONS.find(j => j.value === "eu");
+
+  // map browser locale → UI lang (must be available for that jurisdiction)
+  const localeToLang = { uk: "ua", de: "de", fr: "fr", pl: "pl" };
+  const preferredLang = localeToLang[langCode] || "en";
+  const uiLang = jDef.langs.includes(preferredLang) ? preferredLang : jDef.langs[0];
+
+  return { jurisdiction: jDef.value, lang: uiLang };
+}
+
 export default function App() {
+  const defaults = detectDefaults();
   const [tab, setTab] = useState("contract");
-  const [jurisdiction, setJurisdiction] = useState("ua");
-  const [lang, setLang] = useState("ua");
+  const [jurisdiction, setJurisdiction] = useState(defaults.jurisdiction);
+  const [lang, setLang] = useState(defaults.lang);
   const [history, setHistory] = useState([]);
   const t = T[lang] || T.en;
   const addHistory = useCallback((item) => setHistory(prev => [item, ...prev.slice(0, 9)]), []);
@@ -759,10 +785,13 @@ export default function App() {
           .lexr-grid-2col { grid-template-columns: 1fr !important; }
           .lexr-grid-result { grid-template-columns: 1fr !important; }
           .lexr-grid-qa { grid-template-columns: 1fr !important; }
-          .lexr-summary-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
-          .lexr-summary-actions { border-left: none; border-top: 1px solid #1e2d44; padding-left: 0; padding-top: 12px; flex-direction: row; flex-wrap: wrap; }
-          .lexr-header-controls { gap: 6px; }
+          .lexr-summary-bar { flex-direction: column; align-items: stretch; gap: 10px; }
+          .lexr-summary-actions { border-left: none !important; border-top: 1px solid #1e2d44; padding-left: 0 !important; padding-top: 12px; flex-direction: row; flex-wrap: wrap; gap: 8px !important; }
+          .lexr-summary-actions button { flex: 1; min-width: 120px; justify-content: center; }
+          .lexr-header-controls { width: 100%; justify-content: space-between; padding: 0 0 8px 0; gap: 6px; }
           .lexr-hide-mobile { display: none !important; }
+          .lexr-tab-btn { font-size: 11px !important; padding: 5px 8px !important; }
+          select { font-size: 12px !important; }
         }
       `}</style>
 
@@ -785,8 +814,8 @@ export default function App() {
 
         <div className="lexr-header-controls">
           <div style={S.tabBar}>
-            <button style={S.tab(tab === "contract")} onClick={() => setTab("contract")}>{t.tabContract}</button>
-            <button style={S.tab(tab === "qa")} onClick={() => setTab("qa")}>{t.tabQA}</button>
+            <button style={S.tab(tab === "contract")} className="lexr-tab-btn" onClick={() => setTab("contract")}>{t.tabContract}</button>
+            <button style={S.tab(tab === "qa")} className="lexr-tab-btn" onClick={() => setTab("qa")}>{t.tabQA}</button>
           </div>
           <select style={{ ...S.select, width: "auto" }} value={jurisdiction} onChange={e => handleJurisdictionChange(e.target.value)}>
             {JURISDICTIONS.map(j => <option key={j.value} value={j.value}>{j.label}</option>)}
