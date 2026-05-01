@@ -46,6 +46,84 @@ const T = {
     tip: "Tip: Upload a document alongside your question for context-aware analysis.",
     charExtracted: "characters extracted", high: "high", medium: "medium", low: "low",
   },
+  de: {
+    appSub: "Juristische Dokumentenanalyse", tabContract: "Vertragsanalyse", tabQA: "Rechtsfragen",
+    uploadTitle: "Vertrag hier ablegen oder hochladen", uploadSub: "DOCX · PDF · TXT · MD",
+    orPaste: "— oder Text einfügen —", pastePlaceholder: "Vertragstext hier einfügen…",
+    parsingDoc: "Dokument wird verarbeitet…", detectingParties: "Parteien werden erkannt…",
+    reviewingParty: "Geprüfte Partei", customParty: "Oder Namen manuell eingeben:",
+    customPlaceholder: "Parteiname…", noPartyDetected: "Keine Parteien erkannt — manuell eingeben",
+    uploadFirst: "Zuerst Dokument hochladen", partyHint: "LEXR markiert alle für die gewählte Partei nachteiligen Klauseln.",
+    jurisdiction: "Rechtsordnung", jurisdictionHint: "Im Header-Dropdown festlegen",
+    analyseBtn: "Vertrag analysieren", newAnalysis: "← Neue Analyse",
+    downloadDocx: "↓ DOCX herunterladen", downloadPdf: "↓ PDF exportieren", emailReport: "✉ Bericht senden",
+    execSummary: "Zusammenfassung", overallRisk: "Gesamtrisiko", issuesFound: "Probleme gefunden",
+    flaggedClauses: "Problematische Klauseln", clauseDetail: "Klauseldetails",
+    whyUnfavourable: "Warum nachteilig", originalText: "Originaltext", suggestedReform: "Vorgeschlagene Formulierung",
+    analysisError: "Analyse fehlgeschlagen. Bitte erneut versuchen.", noDocError: "Bitte Vertragstext und Partei angeben.",
+    sessionHistory: "Sitzungsverlauf", noHistory: "Keine früheren Analysen in dieser Sitzung.",
+    qaPlaceholder: "Rechtliche Frage oder Situation beschreiben…", qaEmptyTitle: "Rechtsfrage stellen",
+    qaEmptyBody: "Beschreiben Sie Ihre Situation oder laden Sie ein Dokument hoch. Ich liefere Strategie, Schritte und Gesetzesverweise.",
+    activeJurisdiction: "Aktive Rechtsordnung", jurisdictionNote: "Gesetzesverweise aus",
+    suggestedQ: "Vorgeschlagene Fragen", negotiateTab: "Klausel verhandeln",
+    negotiatePlaceholder: "Konkrete Klausel zum Verhandeln einfügen…", negotiateBtn: "Verhandlungspositionen abrufen",
+    negotiateHint: "3 Verhandlungspositionen für jede Klausel: Aggressiv, Ausgewogen, Konziliant.",
+    aggressive: "Aggressiv", balanced: "Ausgewogen", conciliatory: "Konziliant",
+    tip: "Tipp: Laden Sie ein Dokument mit Ihrer Frage hoch für kontextbewusste Analyse.",
+    charExtracted: "Zeichen extrahiert", high: "hoch", medium: "mittel", low: "niedrig",
+  },
+  fr: {
+    appSub: "Analyse de Documents Juridiques", tabContract: "Analyse de Contrat", tabQA: "Questions Juridiques",
+    uploadTitle: "Déposez le contrat ici ou cliquez pour télécharger", uploadSub: "DOCX · PDF · TXT · MD",
+    orPaste: "— ou collez le texte ci-dessous —", pastePlaceholder: "Collez le texte du contrat ici…",
+    parsingDoc: "Traitement du document…", detectingParties: "Détection des parties…",
+    reviewingParty: "Partie analysée", customParty: "Ou saisissez un nom de partie:",
+    customPlaceholder: "Nom de la partie…", noPartyDetected: "Aucune partie détectée — saisir manuellement",
+    uploadFirst: "Téléchargez d'abord un document", partyHint: "LEXR signalera toutes les clauses défavorables à la partie sélectionnée.",
+    jurisdiction: "Juridiction", jurisdictionHint: "Défini via le menu déroulant",
+    analyseBtn: "Analyser le contrat", newAnalysis: "← Nouvelle analyse",
+    downloadDocx: "↓ Télécharger DOCX", downloadPdf: "↓ Exporter PDF", emailReport: "✉ Envoyer le rapport",
+    execSummary: "Résumé exécutif", overallRisk: "Risque global", issuesFound: "Problèmes trouvés",
+    flaggedClauses: "Clauses problématiques", clauseDetail: "Détail de la clause",
+    whyUnfavourable: "Pourquoi défavorable", originalText: "Texte original", suggestedReform: "Reformulation proposée",
+    analysisError: "Analyse échouée. Veuillez réessayer.", noDocError: "Veuillez fournir le texte et la partie.",
+    sessionHistory: "Historique de session", noHistory: "Aucune analyse précédente dans cette session.",
+    qaPlaceholder: "Décrivez votre question ou situation juridique…", qaEmptyTitle: "Posez une question juridique",
+    qaEmptyBody: "Décrivez votre situation ou téléchargez un document. Je fournirai une stratégie, des étapes et des références législatives.",
+    activeJurisdiction: "Juridiction active", jurisdictionNote: "Les références législatives seront de",
+    suggestedQ: "Questions suggérées", negotiateTab: "Négocier une clause",
+    negotiatePlaceholder: "Collez la clause spécifique à négocier…", negotiateBtn: "Obtenir des positions",
+    negotiateHint: "3 positions de négociation pour toute clause : Agressive, Équilibrée, Conciliante.",
+    aggressive: "Agressive", balanced: "Équilibrée", conciliatory: "Conciliante",
+    tip: "Conseil : téléchargez un document avec votre question pour une analyse contextuelle.",
+    charExtracted: "caractères extraits", high: "élevé", medium: "moyen", low: "faible",
+  },
+  pl: {
+    appSub: "Analiza Dokumentów Prawnych", tabContract: "Przegląd Umowy", tabQA: "Pytania Prawne",
+    uploadTitle: "Upuść umowę tutaj lub kliknij, aby przesłać", uploadSub: "DOCX · PDF · TXT · MD",
+    orPaste: "— lub wklej tekst poniżej —", pastePlaceholder: "Wklej tekst umowy tutaj…",
+    parsingDoc: "Przetwarzanie dokumentu…", detectingParties: "Wykrywanie stron…",
+    reviewingParty: "Analizowana strona", customParty: "Lub wpisz nazwę strony ręcznie:",
+    customPlaceholder: "Nazwa strony…", noPartyDetected: "Nie wykryto stron — wpisz ręcznie",
+    uploadFirst: "Najpierw prześlij dokument", partyHint: "LEXR oznaczy wszystkie klauzule niekorzystne dla wybranej strony.",
+    jurisdiction: "Jurysdykcja", jurisdictionHint: "Ustaw w menu nagłówka",
+    analyseBtn: "Analizuj umowę", newAnalysis: "← Nowa analiza",
+    downloadDocx: "↓ Pobierz DOCX", downloadPdf: "↓ Eksportuj PDF", emailReport: "✉ Wyślij raport",
+    execSummary: "Streszczenie", overallRisk: "Ogólne ryzyko", issuesFound: "Znalezione problemy",
+    flaggedClauses: "Problematyczne klauzule", clauseDetail: "Szczegóły klauzuli",
+    whyUnfavourable: "Dlaczego niekorzystne", originalText: "Oryginalny tekst", suggestedReform: "Proponowane sformułowanie",
+    analysisError: "Analiza nie powiodła się. Spróbuj ponownie.", noDocError: "Podaj tekst umowy i stronę.",
+    sessionHistory: "Historia sesji", noHistory: "Brak poprzednich analiz w tej sesji.",
+    qaPlaceholder: "Opisz swoje pytanie lub sytuację prawną…", qaEmptyTitle: "Zadaj pytanie prawne",
+    qaEmptyBody: "Opisz swoją sytuację lub prześlij dokument. Zapewnię strategię, kroki i odniesienia do przepisów.",
+    activeJurisdiction: "Aktywna jurysdykcja", jurisdictionNote: "Odniesienia do przepisów z",
+    suggestedQ: "Sugerowane pytania", negotiateTab: "Negocjuj klauzulę",
+    negotiatePlaceholder: "Wklej konkretną klauzulę do negocjacji…", negotiateBtn: "Uzyskaj pozycje negocjacyjne",
+    negotiateHint: "3 pozycje negocjacyjne dla każdej klauzuli: Agresywna, Zbalansowana, Pojednawcza.",
+    aggressive: "Agresywna", balanced: "Zbalansowana", conciliatory: "Pojednawcza",
+    tip: "Wskazówka: prześlij dokument wraz z pytaniem dla analizy kontekstowej.",
+    charExtracted: "wyodrębnionych znaków", high: "wysoki", medium: "średni", low: "niski",
+  },
   ua: {
     appSub: "Аналіз Юридичних Документів", tabContract: "Огляд Договору", tabQA: "Юридичний Чат",
     uploadTitle: "Перетягніть договір або натисніть для завантаження", uploadSub: "DOCX · PDF · TXT · MD",
@@ -75,10 +153,18 @@ const T = {
 };
 
 const JURISDICTIONS = [
-  { value: "ua", label: "Ukraine" }, { value: "eu", label: "European Union" },
-  { value: "us", label: "United States" }, { value: "uk", label: "United Kingdom" },
-  { value: "de", label: "Germany" }, { value: "pl", label: "Poland" }, { value: "fr", label: "France" },
+  { value: "at", label: "Austria",          langs: ["de", "en"] },
+  { value: "de", label: "Germany",          langs: ["de", "en"] },
+  { value: "eu", label: "European Union",   langs: ["en", "de", "fr", "pl"] },
+  { value: "fr", label: "France",           langs: ["fr", "en"] },
+  { value: "pl", label: "Poland",           langs: ["pl", "en"] },
+  { value: "ch", label: "Switzerland",      langs: ["de", "fr", "en"] },
+  { value: "ua", label: "Ukraine",          langs: ["ua", "en"] },
+  { value: "uk", label: "United Kingdom",   langs: ["en"] },
+  { value: "us", label: "United States",    langs: ["en"] },
 ];
+
+const LANG_LABELS = { en: "EN", ua: "UA", de: "DE", fr: "FR", pl: "PL" };
 
 const RISK_COLORS = {
   high:   { bg: "#3d1a1a", border: "#c0392b", text: "#f5a89a", badge: "#c0392b", badgeText: "#fff" },
@@ -157,7 +243,7 @@ async function readFileText(file) {
 }
 
 function callClaude(messages, systemPrompt) {
-  return fetch("/api/claude", {
+  return fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 8000, system: systemPrompt, messages }),
@@ -340,7 +426,7 @@ Flag: payment terms, liability caps, termination, IP, jurisdiction clauses, inde
       )}
 
       {!result ? (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 330px", gap: 20 }}>
+        <div className="lexr-grid-2col">
           <div style={S.card}>
             <div style={S.uploadZone(drag)}
               onDragOver={e => { e.preventDefault(); setDrag(true); }} onDragLeave={() => setDrag(false)}
@@ -404,7 +490,7 @@ Flag: payment terms, liability caps, termination, IP, jurisdiction clauses, inde
         </div>
       ) : (
         <div>
-          <div style={{ ...S.card, marginBottom: 16, display: "flex", alignItems: "center", gap: 18, flexWrap: "wrap" }}>
+          <div style={{ ...S.card, marginBottom: 16 }} className="lexr-summary-bar">
             <div style={{ flex: 1, minWidth: 200 }}>
               <div style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#4a6a8a", marginBottom: 4 }}>{t.execSummary}</div>
               <div style={{ fontSize: 14, color: "#c8d8e8", lineHeight: 1.6 }}>{result.summary}</div>
@@ -417,7 +503,7 @@ Flag: payment terms, liability caps, termination, IP, jurisdiction clauses, inde
               <div style={{ fontSize: 10, fontFamily: "'DM Mono', monospace", color: "#4a6a8a", marginBottom: 5 }}>{t.issuesFound}</div>
               <div style={{ fontSize: 26, fontWeight: 600, color: "#e8e0d0", fontFamily: "'Cormorant Garamond', serif" }}>{result.issues?.length || 0}</div>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 7, borderLeft: "1px solid #1e2d44", paddingLeft: 18 }}>
+            <div className="lexr-summary-actions">
               <button style={S.btn} onClick={() => generateDocx(result.issues, party, docTitle, jurisdiction, lang)}>{t.downloadDocx}</button>
               <button style={S.btn} onClick={() => generatePDF(result, party, docTitle, jurisdiction)}>{t.downloadPdf}</button>
               <button style={S.btnGhost} onClick={() => { const b = encodeURIComponent(`LEXR Report\n\nParty: ${party}\nJurisdiction: ${jLabel}\n\n${result.summary}`); window.location.href = `mailto:?subject=LEXR Contract Review&body=${b}`; }}>{t.emailReport}</button>
@@ -426,7 +512,7 @@ Flag: payment terms, liability caps, termination, IP, jurisdiction clauses, inde
             </div>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "320px 1fr", gap: 16 }}>
+          <div className="lexr-grid-result">
             <div style={S.card}>
               <div style={{ fontSize: 11, fontFamily: "'DM Mono', monospace", color: "#4a6a8a", marginBottom: 14 }}>{t.flaggedClauses}</div>
               {result.issues?.map(issue => (
@@ -537,7 +623,7 @@ Respond ONLY with valid JSON (no markdown):
     : ["What are my rights if the counterparty breaches a contract?", "How do I terminate an employment contract legally?", "What constitutes force majeure under local law?", "How to protect IP in a partnership agreement?"];
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 250px", gap: 20 }}>
+    <div className="lexr-grid-qa">
       <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
         <div style={{ ...S.tabBar, width: "fit-content" }}>
           <button style={S.tab(qaMode === "chat")} onClick={() => setQaMode("chat")}>💬 {t.tabQA}</button>
@@ -644,8 +730,16 @@ export default function App() {
   const [jurisdiction, setJurisdiction] = useState("ua");
   const [lang, setLang] = useState("ua");
   const [history, setHistory] = useState([]);
-  const t = T[lang];
+  const t = T[lang] || T.en;
   const addHistory = useCallback((item) => setHistory(prev => [item, ...prev.slice(0, 9)]), []);
+
+  const handleJurisdictionChange = (val) => {
+    setJurisdiction(val);
+    const j = JURISDICTIONS.find(j => j.value === val);
+    if (j && !j.langs.includes(lang)) setLang(j.langs[0]);
+  };
+
+  const availableLangs = JURISDICTIONS.find(j => j.value === jurisdiction)?.langs || ["en"];
 
   return (
     <div style={S.app}>
@@ -655,6 +749,21 @@ export default function App() {
         * { box-sizing: border-box; }
         ::-webkit-scrollbar { width: 5px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: #1e2d44; border-radius: 3px; }
         button:hover { opacity: 0.85; } select option { background: #0d1117; }
+        .lexr-header-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+        .lexr-grid-2col { display: grid; grid-template-columns: 1fr 330px; gap: 20px; }
+        .lexr-grid-result { display: grid; grid-template-columns: 320px 1fr; gap: 16px; }
+        .lexr-grid-qa { display: grid; grid-template-columns: 1fr 250px; gap: 20px; }
+        .lexr-summary-bar { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+        .lexr-summary-actions { display: flex; flex-direction: column; gap: 7px; border-left: 1px solid #1e2d44; padding-left: 18px; }
+        @media (max-width: 768px) {
+          .lexr-grid-2col { grid-template-columns: 1fr !important; }
+          .lexr-grid-result { grid-template-columns: 1fr !important; }
+          .lexr-grid-qa { grid-template-columns: 1fr !important; }
+          .lexr-summary-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+          .lexr-summary-actions { border-left: none; border-top: 1px solid #1e2d44; padding-left: 0; padding-top: 12px; flex-direction: row; flex-wrap: wrap; }
+          .lexr-header-controls { gap: 6px; }
+          .lexr-hide-mobile { display: none !important; }
+        }
       `}</style>
 
       <header style={S.header}>
@@ -670,21 +779,22 @@ export default function App() {
           </div>
           <div>
             <div style={S.logoText}>LEXR</div>
-            <div style={S.logoSub}>{t.appSub}</div>
+            <div style={S.logoSub} className="lexr-hide-mobile">{t.appSub}</div>
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div className="lexr-header-controls">
           <div style={S.tabBar}>
             <button style={S.tab(tab === "contract")} onClick={() => setTab("contract")}>{t.tabContract}</button>
             <button style={S.tab(tab === "qa")} onClick={() => setTab("qa")}>{t.tabQA}</button>
           </div>
-          <select style={{ ...S.select, width: "auto" }} value={jurisdiction} onChange={e => setJurisdiction(e.target.value)}>
+          <select style={{ ...S.select, width: "auto" }} value={jurisdiction} onChange={e => handleJurisdictionChange(e.target.value)}>
             {JURISDICTIONS.map(j => <option key={j.value} value={j.value}>{j.label}</option>)}
           </select>
           <div style={S.tabBar}>
-            <button style={S.tab(lang === "en")} onClick={() => setLang("en")}>EN</button>
-            <button style={S.tab(lang === "ua")} onClick={() => setLang("ua")}>UA</button>
+            {availableLangs.map(l => (
+              <button key={l} style={S.tab(lang === l)} onClick={() => setLang(l)}>{LANG_LABELS[l] || l.toUpperCase()}</button>
+            ))}
           </div>
         </div>
       </header>
@@ -694,6 +804,16 @@ export default function App() {
           ? <ContractTab jurisdiction={jurisdiction} lang={lang} history={history} addHistory={addHistory} />
           : <QATab jurisdiction={jurisdiction} lang={lang} />}
       </main>
+
+      <footer style={{ borderTop: "1px solid #1e2d44", padding: "14px 2rem", textAlign: "center" }}>
+        <span style={{ fontSize: 11, color: "#4a6a8a", fontFamily: "'DM Mono', monospace", letterSpacing: "0.06em" }}>
+          built by{" "}
+          <a href="https://jambureau.com/" target="_blank" rel="noreferrer"
+            style={{ color: "#6b8aad", textDecoration: "none", borderBottom: "1px solid #2e5f9e" }}>
+            jam bureau
+          </a>
+        </span>
+      </footer>
     </div>
   );
 }
