@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lexr",
+  "compatibility_date": "2026-05-01",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "lexr"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
